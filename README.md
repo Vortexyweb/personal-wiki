@@ -63,4 +63,4 @@ Ideal para estudantes e desenvolvedores documentarem seus estudos, comandos úte
 
 * **Gabriel Bueno** - *ADS Student & Tech Enthusiast*
 * GitHub: [@Vortexyweb](https://github.com/Vortexyweb)
-* LinkedIn: [Gabriel Bueno](https://linkedin.com/in/gabriel-bueno)
+* LinkedIn: [Gabriel Bueno](https://linkedin.com/in/gabriel-bueno-67ab79383)
