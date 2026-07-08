@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VortexWiki | Notas Markdown</title>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Marked.js for client-side markdown compilation (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow bg-glow-left"></div>
+  <div class="bg-glow bg-glow-right"></div>
+
+  <div class="wiki-container">
+    <!-- Sidebar -->
+    <aside class="wiki-sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i data-lucide="book-marked" class="icon-glow"></i>
+          <h2>Vortex<span>Wiki</span></h2>
+        </div>
+        <button class="new-note-btn" id="new-note-btn" title="Nova Nota">
+          <i data-lucide="plus-circle"></i> Nova Nota
+        </button>
+      </div>
+
+      <div class="sidebar-search">
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="search-input" placeholder="Pesquisar notas...">
+          <button id="clear-search-btn" class="clear-search-btn" title="Limpar busca" style="display: none;">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="notes-list-container">
+        <div class="notes-list" id="notes-list">
+          <!-- Dynamic notes list items will go here -->
+          <div class="loading-placeholder">Carregando notas...</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="wiki-workspace">
+      <!-- Editor / Preview Area -->
+      <section class="workspace-editor" id="active-workspace" style="display: none;">
+        <!-- Header -->
+        <header class="editor-header">
+          <div class="title-input-container">
+            <input type="text" id="note-title-input" placeholder="Título da Nota">
+            <span class="save-status" id="save-status">
+              <i data-lucide="check"></i> Salvo localmente
+            </span>
+          </div>
+          <div class="editor-actions">
+            <button class="action-btn delete-btn" id="delete-note-btn" title="Excluir Nota">
+              <i data-lucide="trash-2"></i> Excluir
+            </button>
+          </div>
+        </header>
+
+        <!-- Toggle Editor/Preview Tabs -->
+        <div class="editor-tabs">
+          <button class="tab-btn active" data-tab="edit">
+            <i data-lucide="edit-2"></i> Editor
+          </button>
+          <button class="tab-btn" data-tab="preview" id="preview-tab-btn">
+            <i data-lucide="eye"></i> Visualizar (Preview)
+          </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active" id="tab-edit">
+          <div class="editor-textarea-wrapper">
+            <textarea id="editor-textarea" placeholder="Comece a escrever em Markdown aqui..."></textarea>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-preview">
+          <div class="markdown-preview-container" id="markdown-preview">
+            <!-- Compiled HTML goes here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <section class="empty-workspace" id="empty-workspace">
+        <div class="empty-state-content">
+          <i data-lucide="file-text" class="empty-icon"></i>
+          <h3>Nenhuma nota selecionada</h3>
+          <p>Selecione uma nota na barra lateral para ler e editar, ou crie uma nova nota para começar.</p>
+          <button class="btn btn-primary" id="empty-new-note-btn">
+            <i data-lucide="plus"></i> Criar Nova Nota
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Javascript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

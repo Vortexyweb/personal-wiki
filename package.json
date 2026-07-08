@@ -1,0 +1,21 @@
+{
+  "name": "personal-wiki",
+  "version": "1.0.0",
+  "description": "Uma Wiki pessoal e organizadora de notas Markdown local autohospedada",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "keywords": [
+    "wiki",
+    "markdown",
+    "notes",
+    "local-first",
+    "portfolio"
+  ],
+  "author": "Gabriel Bueno",
+  "license": "MIT"
+}
